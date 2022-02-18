@@ -1,0 +1,10 @@
+body {
+    background: url("../img/scenic-view-of-the-beach-723241.jpg") no-repeat center center fixed;
+    background-size: cover;
+    letter-spacing: 0.2em;
+    font-size: 0.8em;
+}
+
+.container {
+    max-width: 500px;
+}
