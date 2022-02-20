@@ -27,9 +27,4 @@ const getCity = async (city) => {
 
 };
 
-// getCity('honolulu')
-//     .then(data => {
-//         return getWeather(data.Key);
-//     })
-//     .then (data => console.log(data))
-//     .catch(err => console.log('Error fetching data:', err));
+

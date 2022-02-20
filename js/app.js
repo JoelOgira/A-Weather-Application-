@@ -5,12 +5,7 @@ const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
 
 const updateUI = (data) => {
-
-    // const cityDetails = data.cityDetails;
-    // const weather = data.weather;
-
     // Destructuring
-    // console.log(data);
     const {cityDetails, weather} = data;
 
     // Updating details template
@@ -22,6 +17,14 @@ const updateUI = (data) => {
             <span>&deg;C</span>
         </div>
     `;
+    
+    // Updating Day/Night picture and icons
+    const iconSrc = `../img/icons/${weather.WeatherIcon}.svg`;
+    icon.setAttribute('src', iconSrc);
+    
+    
+    let timeSrc = weather.IsDayTime ? '../img/day.svg': '../img/night.svg'; //Ternary operator
+    time.setAttribute('src', timeSrc);
 
     // removing d-none class
     if (card.classList.contains('d-none')) {
@@ -35,18 +38,13 @@ const updateCity = async (city) => {
     const cityDetails = await getCity(city);
     const weather = await getWeather(cityDetails.Key);
 
-    return {cityDetails, weather};
-    // Object Shorthand notation used where the property name is same to the value
-    // return {
-    //     cityDetails: cityDetails,
-    //     weather: weather
-    // }
-
+    return {cityDetails, weather}; //Object shorthand notaion
 };
 
 cityLocation.addEventListener('submit', event => {
     event.preventDefault();
 
+    window.scrollTo(0, document.body.scrollHeight);
     const city = cityLocation.city.value.trim();
     cityLocation.reset();
 
