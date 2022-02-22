@@ -10,7 +10,7 @@ const updateUI = (data) => {
 
     // Updating details template
     details.innerHTML = `
-        <h5 class="my-3">${cityDetails.EnglishName}</h5>
+        <h5 class="my-3">${cityDetails.EnglishName} - ${cityDetails.Country.EnglishName}</h5>
         <div class="my-3">${weather.WeatherText}</div>
         <div class="display-4 my-4">
             <span>${weather.Temperature.Metric.Value}</span>
@@ -21,8 +21,7 @@ const updateUI = (data) => {
     // Updating Day/Night picture and icons
     const iconSrc = `../img/icons/${weather.WeatherIcon}.svg`;
     icon.setAttribute('src', iconSrc);
-    
-    
+      
     let timeSrc = weather.IsDayTime ? '../img/day.svg': '../img/night.svg'; //Ternary operator
     time.setAttribute('src', timeSrc);
 

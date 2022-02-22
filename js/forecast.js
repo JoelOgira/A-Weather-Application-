@@ -1,4 +1,4 @@
-const key = 	'DEGMLKpmnbiK1uLlxLbKrlfmtcEHvGVc'; 
+const key = 'DEGMLKpmnbiK1uLlxLbKrlfmtcEHvGVc'; 
 
 // Get weather information
 const getWeather = async (locationKey) => {
@@ -12,7 +12,6 @@ const getWeather = async (locationKey) => {
     return data[0];
     
 };
-
 
 // Get city information
 const getCity = async (city) => {
